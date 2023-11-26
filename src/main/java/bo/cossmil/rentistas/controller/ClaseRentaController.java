@@ -15,7 +15,7 @@ public class ClaseRentaController {
     @Autowired
     private ClaseRentaService claseRentaService;
 
-    @GetMapping
+     @GetMapping
     List<ClaseRenta> getAll(){
         return claseRentaService.getAll();
     }
