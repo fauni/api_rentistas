@@ -14,7 +14,7 @@ import java.time.LocalDate;
 public class MovimientoTit {
     @Id
     private String mtr_mti;
-    private Float ci;
+    private Float ci_mti;
     private int tre_mti;
     private String cdes_mti;
     private double can_mti;
@@ -26,4 +26,5 @@ public class MovimientoTit {
     private int gestion_mti;
     private int reg_mti;
     private int cuenta_mti;
+    private long ci;
 }
