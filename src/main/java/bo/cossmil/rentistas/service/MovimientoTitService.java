@@ -16,4 +16,8 @@ public class MovimientoTitService {
     public List<MovimientoTit> getAll(){
         return movimientoTitRepository.findAll();
     }
+
+     public List<MovimientoTit> findTop10(){
+         return movimientoTitRepository.findTop10ByOrderByMtrmtiDesc();
+     }
 }

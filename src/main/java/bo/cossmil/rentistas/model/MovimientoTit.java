@@ -1,9 +1,6 @@
 package bo.cossmil.rentistas.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -13,18 +10,23 @@ import java.time.LocalDate;
 @Table(name = "r_movtit")
 public class MovimientoTit {
     @Id
-    private String mtr_mti;
+    @Column(name = "mtr_mti")
+    private String mtrmti;
     private Float ci_mti;
-    private int tre_mti;
+    private Integer tre_mti;
     private String cdes_mti;
-    private double can_mti;
-    private double efec_mti;
-    private int mon_mti;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "descripcion_movimiento_codigo", referencedColumnName = "mtrmti")
+    private DescripcionMovimiento descripcionMovimiento;
+    private Double can_mti;
+    private Double efec_mti;
+    private Double mon_mti;
     private LocalDate fvenc_mti;
-    private int procmes_mti;
-    private int mes_mti;
-    private int gestion_mti;
-    private int reg_mti;
-    private int cuenta_mti;
-    private long ci;
+    private Integer procmes_mti;
+    private Integer mes_mti;
+    private Integer gestion_mti;
+    private Integer reg_mti;
+    private Double cuenta_mti;
+    private Double ci;
 }

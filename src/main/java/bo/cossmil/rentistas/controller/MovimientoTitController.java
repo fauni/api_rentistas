@@ -4,6 +4,7 @@ import bo.cossmil.rentistas.model.MovimientoTit;
 import bo.cossmil.rentistas.service.MovimientoTitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,5 +20,10 @@ public class MovimientoTitController {
     @GetMapping
     List<MovimientoTit> getAll(){
         return movimientoTitService.getAll();
+    }
+
+    @GetMapping("/top")
+    List<MovimientoTit> getTop10(){
+        return movimientoTitService.findTop10();
     }
 }
