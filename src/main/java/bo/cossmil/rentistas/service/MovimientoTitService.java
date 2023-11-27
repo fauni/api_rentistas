@@ -1,5 +1,6 @@
 package bo.cossmil.rentistas.service;
 
+import bo.cossmil.rentistas.controller.dto.MovimientoTitDTO;
 import bo.cossmil.rentistas.model.MovimientoTit;
 import bo.cossmil.rentistas.repository.MovimientoTitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,5 +20,9 @@ public class MovimientoTitService {
 
      public List<MovimientoTit> findTop10(){
          return movimientoTitRepository.findTop10ByOrderByMtrmtiDesc();
+     }
+
+     public List<MovimientoTitDTO> obtenerMovTitAll(){
+        return movimientoTitRepository.obtenerMovimientoTitConDemoren();
      }
 }

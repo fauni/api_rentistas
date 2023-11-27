@@ -15,10 +15,6 @@ public class MovimientoTit {
     private Float ci_mti;
     private Integer tre_mti;
     private String cdes_mti;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "descripcion_movimiento_codigo", referencedColumnName = "mtrmti")
-    private DescripcionMovimiento descripcionMovimiento;
     private Double can_mti;
     private Double efec_mti;
     private Double mon_mti;

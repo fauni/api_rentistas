@@ -1,5 +1,6 @@
 package bo.cossmil.rentistas.controller;
 
+import bo.cossmil.rentistas.controller.dto.MovimientoTitDTO;
 import bo.cossmil.rentistas.model.MovimientoTit;
 import bo.cossmil.rentistas.service.MovimientoTitService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +26,10 @@ public class MovimientoTitController {
     @GetMapping("/top")
     List<MovimientoTit> getTop10(){
         return movimientoTitService.findTop10();
+    }
+
+    @GetMapping("/listar")
+    List<MovimientoTitDTO> getListar(){
+        return movimientoTitService.obtenerMovTitAll();
     }
 }
